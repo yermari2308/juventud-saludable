@@ -1,8 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Menu, Sparkles, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { navItems, resources } from "@/lib/site";
@@ -16,9 +17,14 @@ export function Navbar() {
     <header className="sticky top-0 z-50 border-b border-white/60 bg-background/78 backdrop-blur-xl">
       <nav className="container-shell flex h-20 items-center justify-between" aria-label="Navegación principal">
         <Link href="/" className="flex items-center gap-3 font-bold">
-          <span className="grid h-10 w-10 place-items-center rounded-xl bg-saludable-ink text-white">
-            <Sparkles className="h-5 w-5 text-saludable-yellow" aria-hidden="true" />
-          </span>
+          <Image
+            src="/images/logo.jpg"
+            alt="Movimiento Juventud Saludable"
+            width={44}
+            height={44}
+            priority
+            className="h-11 w-11 rounded-xl object-cover"
+          />
           <span className="leading-tight">
             Juventud
             <span className="block text-saludable-orange">Saludable</span>

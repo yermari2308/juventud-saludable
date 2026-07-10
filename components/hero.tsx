@@ -36,12 +36,12 @@ export function Hero() {
         <AnimatedSection delay={0.12} className="relative min-h-[520px]">
           <div className="absolute inset-0 rounded-[2rem] bg-gradient-to-br from-saludable-yellow/70 via-white to-saludable-purple/20" />
           <Image
-            src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?auto=format&fit=crop&w=1300&q=80"
-            alt="Grupo de jóvenes colaborando en una actividad comunitaria"
+            src="/images/foto-grupo.jpg"
+            alt="Jóvenes del Movimiento Juventud Saludable reunidos en un encuentro comunitario"
             fill
             priority
             sizes="(min-width: 1024px) 48vw, 100vw"
-            className="rounded-[2rem] object-cover object-center mix-blend-multiply"
+            className="rounded-[2rem] object-cover object-center"
           />
           <div className="glass absolute bottom-6 left-6 right-6 rounded-2xl p-5">
             <p className="text-sm font-semibold text-saludable-orange">Agenda país</p>
