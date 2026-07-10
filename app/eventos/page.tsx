@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { CalendarDays, MapPin } from "lucide-react";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { events } from "@/lib/site";
+import { getEvents } from "@/lib/events-store";
 import { formatDate } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -10,7 +10,10 @@ export const metadata: Metadata = {
   description: "Calendario, eventos futuros, registro, lugar, fecha y galerías de Juventud Saludable."
 };
 
-export default function EventsPage() {
+export const dynamic = "force-dynamic";
+
+export default async function EventsPage() {
+  const events = await getEvents();
   return (
     <div className="container-shell py-16">
       <SectionHeading eyebrow="Eventos" title="Encuentros diseñados para activar comunidad." description="Calendario de foros, talleres, activaciones y laboratorios con registro preparado para integrarse a una base de datos." />

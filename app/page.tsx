@@ -5,12 +5,16 @@ import { ContentCard } from "@/components/content-card";
 import { Hero } from "@/components/hero";
 import { SectionHeading } from "@/components/section-heading";
 import { Button } from "@/components/ui/button";
-import { allies, events, focusAreas } from "@/lib/site";
+import { allies, focusAreas } from "@/lib/site";
+import { getEvents } from "@/lib/events-store";
 import { blogPosts, opinionPosts } from "@/content/registry";
 import { formatDate } from "@/lib/utils";
 
-export default function Home() {
+export const dynamic = "force-dynamic";
+
+export default async function Home() {
   const featured = [...blogPosts, ...opinionPosts].slice(0, 3);
+  const events = await getEvents();
 
   return (
     <>
@@ -44,7 +48,7 @@ export default function Home() {
             </Button>
           </div>
           <div className="mt-10 grid gap-4 lg:grid-cols-3">
-            {events.map((event) => (
+            {events.slice(0, 3).map((event) => (
               <article key={event.title} className="rounded-2xl border bg-white p-6 shadow-soft">
                 <div className="flex items-center gap-2 text-sm font-semibold text-saludable-orange">
                   <CalendarDays className="h-4 w-4" />

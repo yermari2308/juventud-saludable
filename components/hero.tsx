@@ -4,7 +4,6 @@ import { ArrowRight, PlayCircle } from "lucide-react";
 import { AnimatedSection } from "@/components/animated-section";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { impactStats } from "@/lib/site";
 
 export function Hero() {
   return (
@@ -32,14 +31,6 @@ export function Hero() {
               </Link>
             </Button>
           </div>
-          <dl className="mt-10 grid grid-cols-2 gap-3 md:grid-cols-4">
-            {impactStats.map((stat) => (
-              <div key={stat.label} className="rounded-xl border bg-white/72 p-4 shadow-sm">
-                <dt className="text-2xl font-black text-saludable-purple">{stat.value}</dt>
-                <dd className="mt-1 text-xs font-medium text-muted-foreground">{stat.label}</dd>
-              </div>
-            ))}
-          </dl>
         </AnimatedSection>
 
         <AnimatedSection delay={0.12} className="relative min-h-[520px]">

@@ -21,13 +21,6 @@ export const navItems = [
   { label: "Únete", href: "/unete" }
 ];
 
-export const impactStats = [
-  { value: "7", label: "provincias conectadas" },
-  { value: "2.4k", label: "jóvenes alcanzados" },
-  { value: "68", label: "activaciones comunitarias" },
-  { value: "34", label: "alianzas en formación" }
-];
-
 export const focusAreas = [
   {
     title: "Salud integral",
