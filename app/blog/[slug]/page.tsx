@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import { notFound } from "next/navigation";
 import { ShareButton } from "@/components/share-button";
 import { blogPosts } from "@/content/registry";
@@ -18,8 +17,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     description: post.metadata.description,
     openGraph: {
       title: post.metadata.title,
-      description: post.metadata.description,
-      images: [post.metadata.image]
+      description: post.metadata.description
     }
   };
 }
@@ -37,11 +35,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <h1 className="mt-4 text-4xl font-black leading-tight md:text-6xl">{metadata.title}</h1>
         <p className="mt-5 text-lg leading-8 text-muted-foreground">{metadata.description}</p>
         <p className="mt-5 text-sm font-semibold text-muted-foreground">
-          {metadata.author} · {formatDate(metadata.date)} · {metadata.readingTime}
+          {formatDate(metadata.date)} · {metadata.readingTime}
         </p>
-      </div>
-      <div className="relative mx-auto mt-10 aspect-[16/8] max-w-5xl overflow-hidden rounded-[2rem]">
-        <Image src={metadata.image} alt="" fill sizes="100vw" className="object-cover" priority />
       </div>
       <div className="editorial-prose mx-auto mt-12 max-w-3xl">
         <Component />

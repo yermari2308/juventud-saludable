@@ -13,8 +13,8 @@ export default function BlogPage() {
   return (
     <div className="container-shell py-16">
       <div className="grid gap-8 lg:grid-cols-[1fr_22rem] lg:items-end">
-        <SectionHeading eyebrow="Blog" title="Conocimiento para actuar mejor." description="Artículos en MDX con categorías, autores, etiquetas, tiempo de lectura e imágenes destacadas." />
-        <Input aria-label="Buscar artículos" placeholder="Buscar por tema, autor o categoría" />
+        <SectionHeading eyebrow="Blog" title="Conocimiento para actuar mejor." description="Artículos en MDX con categorías, etiquetas y tiempo de lectura." />
+        <Input aria-label="Buscar artículos" placeholder="Buscar por tema o categoría" />
       </div>
       <div className="mt-10 grid gap-5 lg:grid-cols-3">
         {blogPosts.map((post) => (
@@ -23,7 +23,6 @@ export default function BlogPage() {
             href={`/blog/${post.slug}`}
             title={post.metadata.title}
             description={post.metadata.description}
-            image={post.metadata.image}
             meta={`${post.metadata.category} · ${post.metadata.readingTime}`}
           />
         ))}

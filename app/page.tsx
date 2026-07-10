@@ -79,7 +79,6 @@ export default async function Home() {
               href={blogPosts.includes(post as (typeof blogPosts)[number]) ? `/blog/${post.slug}` : `/opinion-juvenil/${post.slug}`}
               title={post.metadata.title}
               description={post.metadata.description}
-              image={post.metadata.image}
               meta={post.metadata.category}
             />
           ))}

@@ -22,8 +22,7 @@ export default function OpinionPage() {
             key={post.slug}
             href={`/opinion-juvenil/${post.slug}`}
             title={post.metadata.title}
-            description={`${post.metadata.description} · ${post.metadata.province}`}
-            image={post.metadata.image}
+            description={post.metadata.description}
             meta={`${post.metadata.category} · ${post.metadata.readingTime}`}
           />
         ))}
