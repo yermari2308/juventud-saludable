@@ -49,10 +49,10 @@ export default function OpenGraphImage() {
           </div>
           Juventud Saludable
         </div>
-        <div>
+        <div style={{ display: "flex", flexDirection: "column" }}>
           <div
             style={{
-              display: "inline-flex",
+              display: "flex",
               borderRadius: 999,
               background: "rgba(242, 106, 46, 0.14)",
               color: "#c94b16",
